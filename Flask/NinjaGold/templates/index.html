@@ -7,22 +7,31 @@
     <title>ninjagold</title>
 </head>
 <body>
-     
+<!-- <style>
+    .one {
+        background: url(image1.png) no-repeat left top;
+    }
 
-    <h1>Ninja Gold <class class="font" ></class></h1>
-<p>Your Gold: {{session['yourGold']}}<br></p>
+    .two {
+        background: url(image2.png) no-repeat right bottom;
+    }
+</style> -->
+
+<div class="one two"></div>
+
+    <h1>Ninja Gold </h1>
+<p align="right"style="color:gold ; font-size: 25px">Your Gold: {{session['yourGold']}}<br></p>
+   
     <div class ='location'>
-    
         <h4>Farm</h4>
         <p>Earns 10-20 gold</p>
         <form action="/process_money" method="post">
         <input type="hidden" name ="location" value="farm" >    
         <input class="button" type="submit" value="Find Gold!">
-    
         </form>
     </div>
+
     <div class ='location'>
-    
         <h4>Cave</h4>
         <p>Earns 5-10 gold</p>
         <form action="/process_money" method="post">
@@ -30,8 +39,8 @@
         <input  class="button" type="submit" value="Find Gold!">        
         </form>
     </div>
+
     <div class ='location'>
-   
         <h4>House</h4>
         <p>Earns 2-5 gold</p>
         <form action="/process_money" method="post">
@@ -39,15 +48,17 @@
         <input  class="button"type="submit" value="Find Gold!">        
         </form>
     </div>
+
     <div class ='location'>
-            <h4>Casino</h4>
+        <h4>Casino</h4>
         <p>Earns 0-50 gold</p>
         <form action="/process_money" method="post">
         <input type="hidden" name ="location" value="casino"       >    
         <input class="button"type="submit" value="Find Gold!">
         </form>
     </div>
-    <p>activities:</p>
+
+    <p>Activities:</p>
     
     <div id ='activities'>
          {% for x in session ['activity'] %}
@@ -59,5 +70,6 @@
          {% endfor %}
          
     </div>
+    
 </body>
 </html>
